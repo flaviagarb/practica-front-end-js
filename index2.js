@@ -24,13 +24,13 @@ function drawProducts() {
         purchase: false
     }];
     const container = document.querySelector(".products-container")
-    products.forEach(products => {
+    products.forEach(product => {
         const productHTML = document.createElement('div');
         productHTML.innerHTML = `
-            <p>${products.name}</p>
-            <p>${products.description}</p>
-            <p>${products.price}</p>
-            <p>${products.purchase}</p>
+            <p>${product.name}</p>
+            <p>${product.description}</p>
+            <p>${product.price}</p>
+            <p>${product.purchase}</p>
             `
         container.appendChild(productHTML)
     })

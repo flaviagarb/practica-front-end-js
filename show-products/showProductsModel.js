@@ -1,6 +1,6 @@
 export async function getProducts() {
 
-    const products = [];
+    let products = [];
     try {
         const response = await fetch('http://localhost:8000/api/products')
         products = await response.json();
