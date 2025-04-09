@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const loader = document.querySelector(".loader")
 
     const notifications = document.querySelector(".notifications")
+    const { showNotification } = notificationsController(notifications);
 
     const { show, hide } = loaderController(loader)
     container.addEventListener('loader-products-started', () => {
@@ -16,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     container.addEventListener('loader-products-finished', () => {
         hide()
     })
-    container.addEventListener("load-products-error", (event) => {
+    container.addEventListener("loader-products-error", (event) => {
         const errorMessage = event.detail;
         showNotification(errorMessage)
     })

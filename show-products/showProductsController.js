@@ -10,7 +10,7 @@ export async function showProductsController(container) {
         const products = await getProducts();
         drawProducts(products, container)
     } catch (error) {
-        const event = new CustomEvent("load-products-error", {
+        const event = new CustomEvent("loader-products-error", {
             detail: error.message
         })
         container.dispatchEvent(event)

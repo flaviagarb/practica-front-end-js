@@ -1,12 +1,12 @@
 // funciones para crear el html 
 export const buildProducts = (product) => {
     let productView = `
-            <p>${product.image}</p>
-            <p>${product.name}</p>
-            <p>${product.description}</p>
-            <p>${product.price}</p>
-            <p>${product.type}</p>
-            `
+      <img src="${product.image}" alt="${product.name}" />
+      <h3>${product.name}</h3>
+      <p>${product.description}</p>
+      <p><strong>${product.price} €</strong></p>
+      <p><em>${product.type}</em></p>
+    `
     return productView
 }
 
