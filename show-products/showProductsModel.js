@@ -1,3 +1,5 @@
+// Usamos el modelo para obtener informacion del backend haciendo peticiones HTTP
+
 export async function getProducts() {
 
     let products = [];

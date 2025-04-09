@@ -1,19 +1,31 @@
+// Usa modelo y usa vistas
 import { getProducts } from "./showProductsModel.js";
 import { buildNoProductsAdvice, buildProducts } from "./showProductsView.js"
 
-export async function showProductsController() {
-    const container = document.querySelector(".products-container")
-    const products = await getProducts();
+export async function showProductsController(container) {
 
-    if (products.length > 0) {
+    try {
+        const event = new CustomEvent("loader-products-started")
+        container.dispatchEvent(event)
+        const products = await getProducts();
         drawProducts(products, container)
-    } else {
-        container.innerHTML = buildNoProductsAdvice()
+    } catch (error) {
+        const event = new CustomEvent("load-products-error", {
+            detail: error.message
+        })
+        container.dispatchEvent(event)
+    } finally {
+        const event = new CustomEvent("loader-products-finished")
+        container.dispatchEvent(event)
     }
 }
 
 function drawProducts(products, container) {
     container.innerHTML = '';
+
+    if (products.length === 0) {
+        container.innerHTML = buildNoProductsAdvice()
+    }
 
     products.forEach((product) => {
 
