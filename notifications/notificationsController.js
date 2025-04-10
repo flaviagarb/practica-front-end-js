@@ -6,11 +6,10 @@ export function notificationsController(notifications) {
         newNotification.remove();
     }
 
-    const showNotification = (message, type = 'error') => {
+    const showNotification = (message) => {
         const newNotification = document.createElement('div');
-        newNotification.classList.add('notification')
-        newNotification.classList.add(type)
-        newNotification.innerHTML = buildNotification(message, type)
+
+        newNotification.innerHTML = buildNotification(message)
 
         notifications.appendChild(newNotification)
 
