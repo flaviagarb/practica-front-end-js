@@ -1,8 +1,7 @@
 import { REGEXP } from "../utils/constants.js";
 import { loginUser } from "./loginModel.js";
 
-export function loginController(loginForm) {
-
+export function loginController(loginForm, show, hide, showNotification) {
     loginForm.addEventListener("submit", (event) => {
         event.preventDefault();
 
@@ -14,16 +13,22 @@ export function loginController(loginForm) {
 
         const emailRegExp = new RegExp(REGEXP.mail);
         if (!emailRegExp.test(userEmail)) {
-            alert('formato de mail incorrecto')
+            showNotification("Wrong Email!");
         } else {
-            handleLoginUser(userEmail, password)
+            handleLoginUser(userEmail, password);
         }
-
-    })
+    });
 
     async function handleLoginUser(userEmail, password) {
-        const token = await loginUser(userEmail, password);
-
-        localStorage.setItem("token", token)
+        try {
+            show();
+            const token = await loginUser(userEmail, password);
+            localStorage.setItem("token", token)
+            window.location = '/';
+        } catch (error) {
+            showNotification(error.message)
+        } finally {
+            hide();
+        }
     }
 }

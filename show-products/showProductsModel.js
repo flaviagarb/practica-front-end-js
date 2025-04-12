@@ -8,8 +8,7 @@ export async function getProducts() {
         products = await response.json();
 
     } catch (error) {
-        throw new Error("No ha sido posible obtener los productos.")
+        throw new Error("It was not possible to obtain the products")
     }
     return products;
-
 }

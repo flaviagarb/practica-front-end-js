@@ -1,6 +1,7 @@
 import { createProduct } from "./createProductModel.js";
 
-export const createProductController = (form) => {
+
+export const createProductController = (form, show, hide, showNotification) => {
     form.addEventListener('submit', async (event) => {
         event.preventDefault();
 
@@ -16,12 +17,16 @@ export const createProductController = (form) => {
         const productType = productT.value;
 
         try {
+            show();
             await createProduct(productImage, productName, productDescription, productPrice, productType)
+            showNotification("Product created successfully")
             setTimeout(() => {
                 window.location = '/';
             }, 2000)
         } catch (error) {
-            alert(error.message)
+            showNotification(error.message)
+        } finally {
+            hide();
         }
     })
 }
