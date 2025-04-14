@@ -9,16 +9,12 @@ export const buildproductDetailView = (product) => {
         <p><em>${product.type}</em></p>
         `;
 
-    if (product.likes > 0) {
-        productView += `<p>${product.likes}</p>`;
-    }
-
     return productView
 }
 
 export const buildRemoveproductButton = () => {
     const removeButton = document.createElement("button");
-    removeButton.textContent = 'Borrar product';
+    removeButton.textContent = 'Delete';
 
     return removeButton;
 }
