@@ -19,7 +19,7 @@ export const createProductController = (form, show, hide, showNotification) => {
         try {
             show();
             await createProduct(productImage, productName, productDescription, productPrice, productType)
-            showNotification("Product created successfully")
+            showNotification("Product created successfully", "success")
             setTimeout(() => {
                 window.location = '/';
             }, 2000)

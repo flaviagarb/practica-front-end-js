@@ -29,7 +29,8 @@ function drawProducts(products, container) {
 
     products.forEach((product) => {
 
-        const productHtml = document.createElement('div');
+        const productHtml = document.createElement("a");
+        productHtml.setAttribute("href", `./product-detail.html?id=${product.id}`)
         productHtml.innerHTML = buildProducts(product)
 
         container.appendChild(productHtml)

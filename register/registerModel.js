@@ -3,7 +3,7 @@ export const createUser = async (name, email, pw) => {
     const response = await fetch("http://localhost:8000/auth/register", {
         method: "POST",
         body: JSON.stringify({
-            name,
+            name: name,
             username: email,
             password: pw
         }),

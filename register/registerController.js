@@ -7,6 +7,9 @@ export const registerController = (form) => {
 
         event.preventDefault();
 
+        const nameElement = form.querySelector('#name');
+        const name = nameElement.value;
+
         const emailElement = form.querySelector('#email');
         const email = emailElement.value;
 
