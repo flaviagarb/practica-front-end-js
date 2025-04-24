@@ -1,0 +1,23 @@
+{
+  "name": "-practica-front-end",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flaviagarb/practica-front-end-js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/flaviagarb/practica-front-end-js/issues"
+  },
+  "homepage": "https://github.com/flaviagarb/practica-front-end-js#readme",
+  "description": "",
+  "dependencies": {
+    "bootstrap": "^5.3.5"
+  }
+}

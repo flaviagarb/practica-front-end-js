@@ -8,7 +8,6 @@ export const buildproductDetailView = (product) => {
         <p>${product.price} €</p>
         <p><em>${product.type}</em></p>
         `;
-
     return productView
 }
 
