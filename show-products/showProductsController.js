@@ -31,6 +31,8 @@ function drawProducts(products, container) {
 
         const productHtml = document.createElement("a");
         productHtml.setAttribute("href", `./product-detail.html?id=${product.id}`)
+        productHtml.classList.add("card", "p-3", "text-decoration-none", "text-dark")
+        productHtml.style.width = "18rem"
         productHtml.innerHTML = buildProducts(product)
 
         container.appendChild(productHtml)

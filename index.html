@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-light">
+    <nav class="navbar navbar-expand-lg sticky-top" style="background-color: #007f7f;">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="https://i.ibb.co/Y4RrfJDw/luna-logo.jpg" alt="logo" width="50" height="50">
@@ -22,15 +22,15 @@
                 aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
-                <div class="session d-flex gap-3"></div>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 session d-flex flex-column flex-lg-row gap-2">
             </div>
         </div>
     </nav>
     <h1 class="text-center my-4">All Products</h1>
     <div class="notifications"></div>
     <div class="loader hidden"></div>
-    <div class="products-container"></div>
+    <div class="products-container d-flex flex-wrap gap-3 justify-content-center"></div>
     <script type="module" src="./index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
