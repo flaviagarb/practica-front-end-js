@@ -5,7 +5,11 @@ export const productDetailController = async (productContainer, productId) => {
 
     const showRemoveproductButton = (productId) => {
         const removeButton = buildRemoveproductButton()
-        productContainer.appendChild(removeButton)
+        const buttonContainer = productContainer.querySelector("#delete-button-container");
+
+        if (buttonContainer) {
+            buttonContainer.appendChild(removeButton)
+        }
 
         removeButton.addEventListener("click", () => {
             if (confirm("¿Are you sure you want to delete the product?")) {

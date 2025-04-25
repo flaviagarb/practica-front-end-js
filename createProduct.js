@@ -1,6 +1,7 @@
 import { createProductController } from "./create-product/createProductController.js";
 import { notificationsController } from './notifications/notificationsController.js';
 import { loaderController } from './loader/loaderController.js';
+import { sessionController } from './session/sessionController.js';
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -13,12 +14,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const loader = document.querySelector(".loader");
     const notifications = document.querySelector(".notifications");
     const form = document.querySelector("form");
+    const session = document.querySelector(".session");
 
     const { show, hide } = loaderController(loader);
     const { showNotification } = notificationsController(notifications);
 
     try {
         createProductController(form, show, hide, showNotification);
+        sessionController(session);
     } catch (error) {
         console.error(error);
     }

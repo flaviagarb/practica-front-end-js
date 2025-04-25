@@ -5,31 +5,75 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Create Product</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./loader.css">
     <link rel="stylesheet" href="./notifications/notifications.css">
+
 </head>
 
 <body>
-    <h1>Create Product</h1>
+    <nav class="navbar navbar-expand-lg sticky-top" style="background-color: #007f7f;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/index.html">
+                <img src="https://i.ibb.co/Y4RrfJDw/luna-logo.jpg" alt="logo" width="50" height="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 session d-flex flex-column flex-lg-row gap-2">
+                    <li class="nav-item d-flex align-items-center gap-2">
+                        <!-- falta añadir el name user -->
+                        <button class="btn btn-danger btn-sm logout">
+                            <i class="bi bi-box-arrow-right"></i> Logout
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <div class="notifications"></div>
     <div class="loader hidden"></div>
     <form>
-        <input type="url" name="image" id="image" placeholder="URL of the image" />
-        <input type="text" name="name" id="name" placeholder="name" required />
-        <input type="text" name="description" id="description" placeholder="description" required />
-        <input type="number" name="price" id="price" placeholder="price" required inputmode="numeric" max="99999" />
+        <div class="container d-flex justify-content-center align-items-start mt-5">
+            <div class="card p-4" style="max-width: 400px; width: 100%;">
 
-        <select name="type" id="type">
-            <option value="" disabled selected>Select type</option>
-            <option value="sell">Sell</option>
-            <option value="purchase">Purchase</option>
-        </select>
+                <label for="image" class="form-label">Image URL:</label>
+                <input type="url" name="image" id="image" class="form-control" placeholder="Enter the image URL" />
 
-        <br />
-        <button>Create product</button>
+                <label for="name" class="form-label mt-3">Product Name:</label>
+                <input type="text" name="name" id="name" class="form-control" placeholder="Enter product name"
+                    required />
+
+                <label for="description" class="form-label mt-3">Description:</label>
+                <input type="text" name="description" id="description" class="form-control"
+                    placeholder="Enter description" required />
+
+                <label for="price" class="form-label mt-3">Price:</label>
+                <input type="number" name="price" id="price" class="form-control" placeholder="Enter price" required
+                    inputmode="numeric" max="99999" />
+
+                <label for="type" class="form-label mt-3">Type:</label>
+                <select name="type" id="type" class="form-select" required>
+                    <option value="" disabled selected>Select type</option>
+                    <option value="sell">Sell</option>
+                    <option value="purchase">Purchase</option>
+                </select>
+
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-primary" style="background-color: #007f7f;">Create
+                        Product</button>
+                </div>
+
+            </div>
+        </div>
     </form>
 
     <script type="module" src="./createProduct.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
