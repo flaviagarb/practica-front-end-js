@@ -18,5 +18,5 @@ export const buildProducts = (product) => {
 
 // funcion para pintar no hay productos
 export const buildNoProductsAdvice = () => {
-  return '<h3> Lo siento, no hay productos disponibles! </h3>'
+  return '<h3> Sorry, there are no products available! </h3>'
 }
