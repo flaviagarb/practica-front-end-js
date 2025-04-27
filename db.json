@@ -1,0 +1,118 @@
+{
+  "users": [
+    {
+      "name": "flavia garbetta",
+      "username": "flavia@garbetta.com",
+      "password": "$2b$10$q2/hSaRsoV2w5QeKFWIfBeB4D59vyN17V3cfrpyIY0HKbeDUnjdrG",
+      "id": 1
+    },
+    {
+      "name": "Jacobo Lima",
+      "username": "Jacobo@lima.com",
+      "password": "$2b$10$q2/hSaRsoV2w5QeKFWIfBemsPCtVAOuaa6YmaIYppmw7mFSh/yR7i",
+      "id": 2
+    },
+    {
+      "name": "maria teresa sola",
+      "username": "teresa@sola.com",
+      "password": "$2b$10$q2/hSaRsoV2w5QeKFWIfBeJYzjptMVcJ1wzEJQIm7GAFISQADAOsi",
+      "id": 3
+    },
+    {
+      "name": "Samuel",
+      "username": "samu@martin.com",
+      "password": "$2b$10$NwcqwLvUwV2UfKmdDoPAI.SheMBvv8F0xkUzd3ubCPmZOOtvCFIfu",
+      "id": 4
+    },
+    {
+      "name": "ana",
+      "username": "ana@gmail.com",
+      "password": "$2b$10$XPV/LXXOUSnQxl5srBUN1uJA6ljYvmYLfkjmMPlxBMr6Tib0ccdVS",
+      "id": 5
+    },
+    {
+      "name": "juan",
+      "username": "juan@gmail.com",
+      "password": "$2b$10$XPV/LXXOUSnQxl5srBUN1u3muAaTwG7iJaaeSHkce1DR0xwj7M1Oq",
+      "id": 6
+    },
+    {
+      "name": "anto",
+      "username": "anto@gmail.com",
+      "password": "$2b$10$XPV/LXXOUSnQxl5srBUN1ujGc1Qvg1mxXOwz7SrnW5XcRqb1udo7W",
+      "id": 7
+    }
+  ],
+  "products": [
+    {
+      "image": "https://i.ibb.co/N6nmNm6H/Iphone-15-128-gb-verde.webp",
+      "name": "Iphone 11",
+      "description": "Segunda mano",
+      "price": "350",
+      "type": "purchase",
+      "userId": 1,
+      "updatedAt": "2025-04-23T11:35:16.388Z",
+      "id": 2
+    },
+    {
+      "image": "https://i.ibb.co/3mXyv7X1/pantalla-lg.jpg",
+      "name": "Pantalla LG",
+      "description": "Plus",
+      "price": "100",
+      "type": "sell",
+      "userId": 2,
+      "updatedAt": "2025-04-23T11:37:31.668Z",
+      "id": 3
+    },
+    {
+      "image": "https://i.ibb.co/pvPsGy8q/Espejo-grande.webp",
+      "name": "Espejo MUSK IKEA",
+      "description": "200cm x 100 cm",
+      "price": "500",
+      "type": "sell",
+      "userId": 2,
+      "updatedAt": "2025-04-23T11:38:09.649Z",
+      "id": 4
+    },
+    {
+      "image": "https://i.ibb.co/9kFR7gJp/Auriculares-mini-rosa.jpg",
+      "name": "DCU auriculares",
+      "description": "color rosa",
+      "price": "50",
+      "type": "sell",
+      "userId": 3,
+      "updatedAt": "2025-04-23T11:40:52.356Z",
+      "id": 5
+    },
+    {
+      "image": "https://ibb.co/8nZY74HT",
+      "name": "Lampara KIS IKEA",
+      "description": "Lampara madera/negra para mesilla",
+      "price": "100",
+      "type": "sell",
+      "userId": 1,
+      "updatedAt": "2025-04-27T18:58:49.565Z",
+      "id": 6
+    },
+    {
+      "image": "",
+      "name": "Gafas de sol",
+      "description": "Essie",
+      "price": "303",
+      "type": "sell",
+      "userId": 1,
+      "updatedAt": "2025-04-27T19:04:55.002Z",
+      "id": 7
+    },
+    {
+      "image": "",
+      "name": "Motorola ",
+      "description": "Collection",
+      "price": "200",
+      "type": "sell",
+      "userId": 1,
+      "updatedAt": "2025-04-27T19:06:17.563Z",
+      "id": 8
+    }
+  ]
+}
