@@ -12,9 +12,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const loader = document.querySelector(".loader");
-    const notifications = document.querySelector(".notifications");
     const form = document.querySelector("form");
     const session = document.querySelector(".session");
+    const notifications = document.querySelector(".notifications");
 
     const { show, hide } = loaderController(loader);
     const { showNotification } = notificationsController(notifications);

@@ -22,7 +22,7 @@ export const createProductController = (form, show, hide, showNotification) => {
             showNotification("Product created successfully", "success")
             setTimeout(() => {
                 window.location = '/';
-            }, 2000)
+            }, 3000)
         } catch (error) {
             showNotification(error.message)
         } finally {

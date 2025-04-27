@@ -23,7 +23,7 @@ export async function removeproduct(productId) {
     });
 
     if (!response.ok) {
-        throw new Error("product not available")
+        throw new Error("Product NOT available")
     }
 }
 

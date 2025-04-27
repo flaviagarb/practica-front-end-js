@@ -57,13 +57,75 @@ This is a frontend project developed as part of the KeepCoding Full Stack Web De
 
 2. Open the project folder in your editor
 
-3. Make sure the **Sparrest API backend** is running and accessible
+3. Make sure the **Sparrest API backend** is running and accessible:
+
+`npm start`
 
 4. Launch the app:  
-   - Open `index.html` in your browser  
-   - Or use a local server (e.g., VS Code Live Server extension)
+   - Open index.html in your browse or use a local server:
+
+   `npx live-server``
+
+5. How to access user:
+
+- flavia@garbetta.com // Flavia1234
+- jacobo@lima.com // Jacobo1234
+
+After login, you can:
+
+- View your own products
+- Create new products
+- Delete your products
 
 ---
+ 
+## Project Structure
+
+```bash
+practica-front-end-js/
+├── create-product/
+│   ├── createProductController.js
+│   └── createProductModel.js
+├── loader/
+│   └── loaderController.js
+├── login/
+│   ├── loginController.js
+│   └── loginModel.js
+├── notifications/
+│   ├── notifications.css
+│   ├── notificationsController.js
+│   └── notificationsView.js
+├── product-detail/
+│   ├── productDetailController.js
+│   ├── productDetailModel.js
+│   └── productDetailView.js
+├── register/
+│   ├── registerController.js
+│   └── registerModel.js
+├── session/
+│   ├── sessionController.js
+│   └── sessionView.js
+├── show-products/
+│   ├── showProductsController.js
+│   ├── showProductsModel.js
+│   └── showProductsView.js
+├── utils/
+├── node_modules/
+├── .gitignore
+├── loader.css
+├── package.json
+├── package-lock.json
+├── README.md
+├── index.html
+├── login.html
+├── register.html
+├── create-product.html
+├── index.js
+├── login.js
+├── register.js
+├── createProduct.js
+└── productDetail.js
+```
 
 ## Credits
 

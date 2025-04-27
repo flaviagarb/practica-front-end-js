@@ -1,9 +1,10 @@
 import { productDetailModel, getLoggedInUserInfo, removeproduct } from "./productDetailModel.js";
 import { buildproductDetailView, buildRemoveproductButton } from "./productDetailView.js";
+import { notificationsController } from '../notifications/notificationsController.js';
 
-export const productDetailController = async (productContainer, productId, show, hide) => {
+export const productDetailController = async (productContainer, productId, show, hide, showNotification) => {
 
-    const showRemoveproductButton = (productId) => {
+    const showRemoveproductButton = async (productId) => {
         const removeButton = buildRemoveproductButton()
         const buttonContainer = productContainer.querySelector("#delete-button-container");
 
@@ -11,9 +12,26 @@ export const productDetailController = async (productContainer, productId, show,
             buttonContainer.appendChild(removeButton)
         }
 
-        removeButton.addEventListener("click", () => {
+        removeButton.addEventListener("click", async () => {
             if (confirm("¿Are you sure you want to delete the product?")) {
-                removeproduct(productId)
+                try {
+                    await removeproduct(productId)
+                    const event = new CustomEvent("product-deleted-ok", {
+                        detail: {
+                            message: 'You have successfully deleted the product!',
+                            type: 'success'
+                        }
+                    });
+                    productContainer.dispatchEvent(event)
+                    setTimeout(() => {
+                        window.location = '/index.html'
+                    }, 3000);
+                } catch (error) {
+                    const event = new CustomEvent("product-deleted-error", {
+                        detail: error
+                    });
+                    productContainer.dispatchEvent(event)
+                }
             }
         })
     }
@@ -26,10 +44,14 @@ export const productDetailController = async (productContainer, productId, show,
 
         const user = await getLoggedInUserInfo();
         if (user.id === productDetail.userId) {
-            showRemoveproductButton(productId);
+            await showRemoveproductButton(productId);
         }
     } catch (error) {
-        alert(error.message);
+        showNotification(error.message)
+        setTimeout(() => {
+            window.location = '/';
+        }, 3000);
+
     } finally {
         hide();
     }
