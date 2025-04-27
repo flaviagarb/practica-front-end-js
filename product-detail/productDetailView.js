@@ -1,5 +1,9 @@
 export const buildproductDetailView = (product) => {
     const date = new Date(product.updatedAt)
+    if (product.image === "") {
+        product.image = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOtjqFKVwZWNCqI33H1OWcsUaZYww6FLLFAw&s"
+    }
+
     let productView = `
         <div class="card mx-auto my-4" style="width: 18rem;"> 
             <img src="${product.image}" class="card-img-top" alt="${product.name}" /> 

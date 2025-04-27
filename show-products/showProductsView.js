@@ -1,5 +1,8 @@
 // funcion para crear el html 
 export const buildProducts = (product) => {
+  if (product.image === "") {
+    product.image = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOtjqFKVwZWNCqI33H1OWcsUaZYww6FLLFAw&s"
+  }
   let productView = `
 
       <img src="${product.image}" class="card-img-top" style="object-fit: cover; height: 200px;" alt="${product.name}" />
