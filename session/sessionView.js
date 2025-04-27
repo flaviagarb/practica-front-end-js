@@ -1,7 +1,7 @@
 export const buildUnauthorizedSession = () => {
   return `
     <a class="btn btn-light text-dark" href="./login.html">Login</a>
-    <a class="btn btn-outline-light text-black" href="./register.html">Create account</a>
+    <a class="btn btn-outline-light text-black" href="./register.html">Signup</a>
   `;
 }
 

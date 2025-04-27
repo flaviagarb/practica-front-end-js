@@ -1,7 +1,7 @@
-import { productDetailModel, getLoggedInUserInfo, removeproduct } from "./productDetailModel.js"
-import { buildproductDetailView, buildRemoveproductButton } from "./productDetailView.js"
+import { productDetailModel, getLoggedInUserInfo, removeproduct } from "./productDetailModel.js";
+import { buildproductDetailView, buildRemoveproductButton } from "./productDetailView.js";
 
-export const productDetailController = async (productContainer, productId) => {
+export const productDetailController = async (productContainer, productId, show, hide) => {
 
     const showRemoveproductButton = (productId) => {
         const removeButton = buildRemoveproductButton()
@@ -19,14 +19,18 @@ export const productDetailController = async (productContainer, productId) => {
     }
 
     try {
-        const productDetail = await productDetailModel(productId)
-        productContainer.innerHTML = buildproductDetailView(productDetail)
+        show();
+
+        const productDetail = await productDetailModel(productId);
+        productContainer.innerHTML = buildproductDetailView(productDetail);
 
         const user = await getLoggedInUserInfo();
         if (user.id === productDetail.userId) {
-            showRemoveproductButton(productId)
+            showRemoveproductButton(productId);
         }
     } catch (error) {
-        alert(error.message)
+        alert(error.message);
+    } finally {
+        hide();
     }
 }

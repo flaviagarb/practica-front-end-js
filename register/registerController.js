@@ -1,7 +1,7 @@
 import { REGEXP } from "../utils/constants.js";
 import { createUser } from "./registerModel.js";
 
-export const registerController = (form) => {
+export const registerController = (form, show, hide) => {
 
     form.addEventListener("submit", (event) => {
 
@@ -23,16 +23,16 @@ export const registerController = (form) => {
 
         const emailRegExp = REGEXP.mail;
         if (!emailRegExp.test(email)) {
-            errors.push('El formato del email es incorrecto')
+            errors.push('The email format is incorrect')
         }
 
 
         if (password !== passwordConfirm) {
-            errors.push('Las contraseñas no son iguales')
+            errors.push('Passwords are not the same')
         }
 
         if (errors.length === 0) {
-            handleCreateUser(name, email, password, form)
+            handleCreateUser(name, email, password, form, show, hide)
         } else {
             errors.forEach(error => {
                 const event = new CustomEvent("register-error", {
@@ -44,23 +44,27 @@ export const registerController = (form) => {
     })
 }
 
-const handleCreateUser = async (name, email, password, form) => {
+const handleCreateUser = async (name, email, password, form, show, hide) => {
     try {
+        show();
+
         await createUser(name, email, password);
         const event = new CustomEvent("register-ok", {
             detail: {
-                message: 'Te has registrado correctamente',
+                message: 'You have successfully registered',
                 type: 'success'
             }
         });
         form.dispatchEvent(event)
         setTimeout(() => {
-            window.location = '/'
-        }, 5000);
+            window.location = '/login.html'
+        }, 3000);
     } catch (error) {
         const event = new CustomEvent("register-error", {
             detail: error
         });
         form.dispatchEvent(event)
+    } finally {
+        hide();
     }
 }
