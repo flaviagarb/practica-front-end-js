@@ -64,7 +64,7 @@ This is a frontend project developed as part of the KeepCoding Full Stack Web De
 4. Launch the app:  
    - Open index.html in your browse or use a local server:
 
-   `npx live-server``
+   `npx live-server`
 
 5. How to access user:
 
